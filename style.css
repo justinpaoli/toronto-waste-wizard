@@ -1,0 +1,107 @@
+body {
+    background-color: black;
+}
+
+.main {
+    background-color: white;
+    width: 60%;
+    margin-left: 20%;
+}
+
+#tab {
+    width: 5%;
+    height: 2vh;
+    background: white;
+    margin-left: 20.5%;
+    transform: perspective(15px) rotateX(8deg);
+}
+
+.header {
+    background-image: linear-gradient(to right,#1D5A94, #23975E);
+    margin-top: -3%;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-family: Arial;
+    padding: 3%;
+}
+
+.content { 
+    margin-top: -2%;
+    width: 100%;
+}
+
+.input {
+    padding-left: 2%;
+}
+
+.submit {
+    padding-right: 2%;
+    width: 5%;
+}
+
+#query {
+    font-size: 16pt;
+    padding: 1%;
+    width: 97%;
+    float: center;
+}
+
+#submit {
+    background-color:#23975E;
+    border: 0;
+    border-radius: 5%;
+    color: white;
+}
+
+.favourites {
+    background-color: #F7FEFA;
+}
+
+.favourites-header {
+    padding: 1%;
+    color: #23975E;
+    font: 20pt Arial;
+}
+
+#favourites {
+    background-color: #F7FEFA;
+    width: 100%;
+}
+
+#results {
+    width: 100%;
+}
+
+.button-container {
+    padding-top: 0;
+    padding-left: 3%;
+    padding-right: 2%;
+    font-size: 28pt;
+    width: 5%
+}
+
+.favourite-button {
+    border: 0;
+    color: grey;
+    width: fit-content;
+}
+
+.favourite {
+    border: 0;
+    color: #23975E;
+}
+
+.name {
+    width: 35%;
+    font: 14pt Arial;
+    padding-top: 1%;
+}
+
+.body {
+    width: 60%;
+    font-family: Arial;
+    padding-top: 1%;
+}
