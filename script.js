@@ -19,9 +19,23 @@ $(document).ready(function() {
 
                 alert("Error: Failed to load Toronto Waste Wizard Catalogue");
 
-            } else {
-
+            } else { 
+                
                 isFavourite = new Array(data.length).fill(false);
+
+                if(localStorage.getItem("favourites") != null) {
+
+                    var tempFavourites = localStorage.getItem("favourites").split(",");
+
+                    for(var i = 0; i < tempFavourites.length; i++) {
+
+                        isFavourite[i] = tempFavourites[i] === "true";
+
+                    }
+
+                    renderFavourites();
+
+                }
 
             }
 
@@ -58,16 +72,7 @@ $(document).ready(function() {
 function updateFavourite(index) {
     
     isFavourite[index] = !isFavourite[index]
-
-    if(isFavourite[index]) {
-
-        $("." + index.toString()).addClass("favourite");
-
-    } else {
-
-        $("." + index.toString()).removeClass("favourite");
-
-    }
+    localStorage.setItem("favourites", JSON.stringify(isFavourite));
 
     renderFavourites();
 
@@ -77,13 +82,19 @@ function renderFavourites() {
 
     var result = "";
     for(var i = 0; i < data.length; i++) {
-
+        
         if(isFavourite[i]) {
             
+            $("." + i.toString()).addClass("favourite");
+
             result += "<tr><td class='button-container'><span class='favourite-button favourite " + i.toString() +"' onclick='updateFavourite(" + i.toString() + ")'>&#9733;</span></td>";
             result += "<td class='name'>" + data[i].title + "</td>"
             result += "<td class='body'>" + parser.parseFromString(data[i].body, "text/html").body.textContent + "</td></tr>";
 
+        } else {
+    
+            $("." + i.toString()).removeClass("favourite");
+    
         }
 
     }
