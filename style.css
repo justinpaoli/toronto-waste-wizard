@@ -8,6 +8,7 @@ body {
     margin-left: 20%;
 }
 
+/*Creates the folder tab effect by rotating a rectangle backwards into the page*/
 #tab {
     width: 5%;
     height: 2vh;
@@ -16,6 +17,7 @@ body {
     transform: perspective(15px) rotateX(8deg);
 }
 
+/*Creates the linear gradient for the banner and shifts it up slightly*/
 .header {
     background-image: linear-gradient(to right,#1D5A94, #23975E);
     margin-top: -3%;
